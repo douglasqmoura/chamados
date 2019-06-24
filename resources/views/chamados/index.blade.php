@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row ">
+
 
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -15,14 +15,20 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Solicitação</th>
+                        <th scope="col">Aberto em</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Solicitante</th>
+                        <th scope="col">Status</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($chamados as $chamado)
                         <tr>
                             <th scope="row"> {{ $chamado->id }}</th>
-                            <td>{{ $chamado->solicitacao }}</td>
+                            <td>{{ date('d-m-Y', strtotime($chamado->created_at)) }}</td>
+                            <td>{{ $chamado->categoria->nome }}</td>
+                            <td>{{ $chamado->usuario->name }}</td>
+                            <td>Aberto</td>
                         </tr>
 
                     @endforeach
@@ -30,6 +36,6 @@
                 </table>
 
 
-            </div>
+
         </div>
 @endsection

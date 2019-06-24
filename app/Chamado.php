@@ -11,4 +11,14 @@ class Chamado extends Model
             'usuario_id',
             'categoria_id'
         ];
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }
