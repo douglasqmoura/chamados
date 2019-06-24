@@ -10,19 +10,19 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <h1>Lista de Chamados</h1>
+                <h1>Lista de Categorias</h1>
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Solicitação</th>
+                        <th scope="col">Categoria</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($chamados as $chamado)
+                    @foreach($categorias as $categoria)
                         <tr>
-                            <th scope="row"> {{ $chamado->id }}</th>
-                            <td>{{ $chamado->solicitacao }}</td>
+                            <th scope="row"> {{ $categoria->id }}</th>
+                            <td>{{ $categoria->nome }}</td>
                         </tr>
 
                     @endforeach

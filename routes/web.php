@@ -20,3 +20,5 @@ Route::resource('chamados','ChamadoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/categorias', 'CategoriaController@index')->name('categoria.listar');

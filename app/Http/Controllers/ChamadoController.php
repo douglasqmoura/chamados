@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Chamado;
 
 class ChamadoController extends Controller
 {
@@ -14,8 +14,8 @@ class ChamadoController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('chamados.index', compact('users'));
+        $chamados = Chamado::all();
+        return view('chamados.index', compact('chamados'));
     }
 
     /**
